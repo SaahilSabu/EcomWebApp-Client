@@ -100,7 +100,7 @@ const Error = styled.span`
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
-  color: red;
+  color : red;
 `;
 
 const Register = () => {
@@ -132,7 +132,7 @@ const Register = () => {
       .catch(function (error) {
         console.log(error);
       });
-    //FIX
+      //FIX
   };
 
   return (

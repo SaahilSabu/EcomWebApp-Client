@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { mobile } from "./../responsive";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { login } from "./../redux/apiCalls";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { login } from './../redux/apiCalls';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100vw;
@@ -119,26 +119,12 @@ const Login = () => {
       <Wrapper>
         <Title>Sign In</Title>
         <Form>
-          <Input
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <Input
-            type="password"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <Button onClick={handleClick} disabled={isFetching}>
-            Login
-          </Button>
+          <Input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+          <Input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+          <Button onClick={handleClick} disabled={isFetching} >Login</Button>
           {error && <Error>Something went wrong...</Error>}
           <LinkSpan>Forgot Password?</LinkSpan>
-          <Link
-            to="/register"
-            style={{ color: "inherit", fontSize: "14px", marginLeft: "10px" }}
-          >
-            Create an Account
-          </Link>
+          <Link to = "/register" style={{ color: 'inherit', fontSize: "14px", marginLeft: "10px"}}>Create an Account</Link>
         </Form>
       </Wrapper>
     </Container>
