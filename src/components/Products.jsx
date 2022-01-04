@@ -22,7 +22,7 @@ const Products = ({ cat, filters, sort }) => {
     const getProducts = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/products?cat=${cat}`
+          `https://zuke-online-store.herokuapp.com/api/products?cat=${cat}`
         );
         setProducts(res.data);
       } catch (err) {}

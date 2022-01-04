@@ -100,7 +100,7 @@ const Error = styled.span`
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
-  color : red;
+  color: red;
 `;
 
 const Register = () => {
@@ -121,7 +121,7 @@ const Register = () => {
   const handleClick = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/auth/register", {
+      .post("https://zuke-online-store.herokuapp.com/api/auth/register", {
         username: newUser.username,
         email: newUser.email,
         password: newUser.password,
@@ -132,7 +132,7 @@ const Register = () => {
       .catch(function (error) {
         console.log(error);
       });
-      //FIX
+    //FIX
   };
 
   return (

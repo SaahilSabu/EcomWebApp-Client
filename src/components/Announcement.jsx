@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { mobile } from './../responsive';
+import { mobile } from "./../responsive";
 
-const Container = styled.div `
+const Container = styled.div`
   height: 25px;
   display: flex;
   justify-content: center;
@@ -11,12 +11,12 @@ const Container = styled.div `
   padding: 10px 10px 10px;
   font-size: 20px;
   color: white;
-  ${mobile({fontSize:"15px", padding: "5px 5px 5px"})};
-
+  ${mobile({ fontSize: "15px", padding: "5px 5px 5px" })};
 `;
 
 const Announcement = () => {
-  return (<Container>Super Deal --> Free shipping on orders over 50$.</Container>
+  return (
+    <Container>Super Deal --> Free shipping on orders over 50$.</Container>
   );
 };
 
