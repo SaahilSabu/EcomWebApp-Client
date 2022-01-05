@@ -158,6 +158,7 @@ const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
+  cursor: pointer;
 `;
 const Amount = styled.div`
   border-radius: 20%;

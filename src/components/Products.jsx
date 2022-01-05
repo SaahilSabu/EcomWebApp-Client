@@ -1,10 +1,8 @@
 import React from "react";
-import { popularProducts } from "../data.js";
 import styled from "styled-components";
 import Product from "./Product";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { mobile } from "./../responsive";
 
 const Container = styled.div`
   padding: 10px 50px 20px;
