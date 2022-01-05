@@ -221,6 +221,7 @@ const Button = styled.button`
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
+  const [qty, setQty] = useState(1);
   const history = useHistory();
   const onToken = (token) => {
     setStripeToken(token);
@@ -241,6 +242,16 @@ const Cart = () => {
     };
     stripeToken && makeRequest();
   }, [stripeToken, cart.total, history]);
+
+  const handleQtyClick = (type) => {
+    //update qty number using plus and minus buttons
+    if (type === "add") {
+      setQty(qty + 1);
+    } else {
+      if (qty > 1) setQty(qty - 1);
+      else setQty(1);
+    }
+  };
 
   return (
     <Container>
@@ -279,9 +290,9 @@ const Cart = () => {
                 </ProductDetail>
                 <PriceDetail>
                   <ProductAmountContainer>
-                    <Add />
+                    <Add onClick={() => handleQtyClick("add")} />
                     <Amount>{product.qty}</Amount>
-                    <Remove />
+                    <Remove onClick={() => handleQtyClick("remove")} />
                   </ProductAmountContainer>
                   <ProductPrice>$ {product.price * product.qty}</ProductPrice>
                 </PriceDetail>

@@ -174,9 +174,10 @@ const ProductPage = () => {
   const [product, setProduct] = useState({});
   const [size, setSize] = useState("");
   const [qty, setQty] = useState(1);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  useEffect(() => {                                       //to fetch product page from product list
+  useEffect(() => {
+    //to fetch product page from product list
     const getProduct = async () => {
       try {
         const res = await publicRequest.get("/products/find/" + id);
@@ -186,7 +187,8 @@ const ProductPage = () => {
     getProduct();
   }, [id]);
 
-  const handleQtyClick = (type) => {             //update qty number using plus and minus buttons
+  const handleQtyClick = (type) => {
+    //update qty number using plus and minus buttons
     if (type === "add") {
       setQty(qty + 1);
     } else {
@@ -195,12 +197,10 @@ const ProductPage = () => {
     }
   };
 
-  const handleClick = () =>{
+  const handleClick = () => {
     //update cart
-    dispatch(
-    addProduct({...product, qty, size })
-    )
-  }
+    dispatch(addProduct({ ...product, qty, size }));
+  };
 
   return (
     <Container>
@@ -237,7 +237,7 @@ const ProductPage = () => {
               <Amount>{qty}</Amount>
               <Add onClick={() => handleQtyClick("add")} />
             </AmountContainer>
-            <Button onClick = {handleClick} >Add To Cart</Button>
+            <Button onClick={handleClick}>Add To Cart</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
